@@ -33,16 +33,16 @@ function infoError(event){
     
     console.log(var_names)
     /*Empty Box checker*/
-    for (i = 0; i < var_names.length; i++) {
-        if (var_names[i]){
-        }else{
-            alert("You left some field empty!");
-            break;
-        }
-    }
-    if (isNaN(phoneNumber)) {
-        alert("Your phone number is invalid!")
-    }
+    // for (i = 0; i < var_names.length; i++) {
+    //     if (var_names[i]){
+    //     }else{
+    //         alert("You left some field empty!");
+    //         break;
+    //     }
+    // }
+    // if (isNaN(phoneNumber)) {
+    //     alert("Your phone number is invalid!")
+    // }
 
 
     var packet = {
@@ -54,7 +54,7 @@ function infoError(event){
         locationSpec: {
             lat : lat,
             long: long,
-            locationName: location
+            locationName: location ? location : "Online"
         },
         phoneNumber: phoneNumber,
         typeOfGame: typeOfGame
@@ -69,8 +69,19 @@ function infoError(event){
     .then((response) => response.json()).then(data =>{
         console.log(data.event);
         if(data.event){
-            alert('sucessful event created!');
-            location.reload();
+            alert('Successful event created!');
+            document.getElementById("eventName").value = "";
+            document.getElementById("eventCreator").value = "";
+            document.getElementById("typeOfGame").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phoneNumber").value = "";
+            document.getElementById("locationDropdown").selectedIndex = 0;
+            document.getElementById("locationSpec").value = "";
+            document.getElementById("startDate").value = "";
+            document.getElementById("endDate").value = "";
+            displayChange();
+        } else{
+            alert("Invalid!")
         }
     });
 }
