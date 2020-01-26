@@ -37,13 +37,36 @@
                            value = "" />
                 </p>
                 <p>
-                    <label>Event Date</label>
+                    <label>Location </label>
+                    <select id = "locationDrop">
+                        <option value = "1">~</option>
+                        <option value = "2">Venue</option>
+                        <option value = "3">Online Event</option>
+                      </select>
+                </p>
+                <p>
+                    <input type = "text"
+                           id = "locationName"
+                           value = "Address"
+                           visible = false />
+                </p>
+                <p>
+                    <label>Start Date</label>
                     <input type ="date"
-                           id = "eventDate"
+                           id = "startDate"
                            value = ""
                            min = "2020-1-25"
                            max = "2021-12-31" />
                 </p>
+                <p>
+                    <label>End Date</label>
+                    <input type ="date"
+                           id = "endDate"
+                           value = ""
+                           min = "2020-1-25"
+                           max = "2021-12-31" />
+                </p>
+                
 
         </form>
         
