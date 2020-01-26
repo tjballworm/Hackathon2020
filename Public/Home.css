@@ -7,11 +7,12 @@
 
 
 #nav-bar{
-    width: 100%;
+    width: 99%;
+    margin: 5px auto;
     height:80px;
     background-color: #2F3242;
+    border-radius: 5px 5px 5px 5px;
 }
-
 
 .nav-bar-link {
     top: 30px;
@@ -36,13 +37,14 @@
   }
 
 
+
   #nav-pic{
-      position: fixed;
-      right: 10px;
-      width: 70px;
-      height: 70px;
-      top: 5px;
-  }
+    position: fixed;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    top: 10px;
+}
 
 
 
