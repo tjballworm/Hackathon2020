@@ -71,6 +71,48 @@ app.post('/add',  async (req, res) => {
 });
 
 
+app.post('/find',  async (req, res) => {
+    console.log("Adding an Event");
+    //console.log(req.body);
+
+    const events = await Event.find({});
+    const data = Array.from(events);
+
+    const regEx = req.body.expr;
+    if(!regEx){
+        res.status(400).send("Provide a Expression");
+    }
+
+    const filterEvents = data.filter(e => (e.eventName + e.email + e.locationSpec.locationName + e.eventCreator + e.typeOfGame).match(regEx));
+    res.send(filterEvents)
+    console.log(filterEvents);
+
+
+    console.log(Array.from(events));
+    // const event = new Event({
+    //     eventName: req.body.eventName,
+    //     eventCreator: req.body.eventCreator,
+    //     email : req.body.email,
+    //     dateStart : req.body.dateStart,
+    //     dateEnd : req.body.dateEnd,
+    //     locationSpec : {
+    //         lat : req.body.locationSpec.lat,
+    //         long : req.body.locationSpec.long,
+    //         locationName : req.body.locationSpec.locationName
+    //     }, 
+    //     phoneNumber : req.body.phoneNumber,
+    //     typeOfGame : req.body.typeOfGame
+    // });
+    // console.log(event);
+    // try{
+    //     const savedEvent = await event.save();
+    //     res.send({event: event.id});
+    // } catch(err){
+    //     res.status(400).send(err);
+    // }
+});
+
+
 
 
 // http://localhost:8080/
