@@ -10,7 +10,11 @@ app.use(express.static('Public'));
 
 
 app.get("/", (req, res)=>{
-    res.send("You made it to the server, it's working");
+    res.sendFile("./Public/Home.html");
+})
+
+app.get("/Home", (req, res)=>{
+    res.sendFile("./Public/Home.html");
 })
 
 
