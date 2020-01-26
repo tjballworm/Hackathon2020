@@ -4,3 +4,12 @@
     box-sizing: border-box;
     font-family: 'Jura';
 }
+
+label{
+    position: relative;
+    left: 40%;
+}
+p input{
+    position: absolute;
+    left: 50%;
+}
