@@ -4,17 +4,26 @@
     box-sizing: border-box;
     font-family: 'Jura';
 }
-
+h1{
+    margin: auto;
+}
 /* #locationDrop{
     position: relative;
     color: black;
     left: 45%;
 } */
 
+main{
+    width: 100vw;
+}
+body{
+    width: 100%;
+}
+
 #locationSpec{
     /* position: relative;
     left: 50%; */
-    visibility: hidden;
+    display: none;
     /*TODO IMPLEMENT THING TO SHOW THE LOCATION*/
 }
 
@@ -60,7 +69,7 @@
       top: 10px;
   }
   form{
-      font-size: 32px;
+      font-size: 28px;
       margin: 120px auto;
       display: table;
       width: 600px;
