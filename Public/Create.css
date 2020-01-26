@@ -23,7 +23,7 @@ body{
 #locationSpec{
     /* position: relative;
     left: 50%; */
-    visibility: hidden;
+    display: none;
     /*TODO IMPLEMENT THING TO SHOW THE LOCATION*/
 }
 
