@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Jura';
 }
 
 
@@ -15,7 +16,6 @@
 .nav-bar-link {
     top: 30px;
     user-select: none;
-    font-family: 'Roboto', sans-serif;
     color: #fff;
     text-align: center;
     padding: 14px 16px;
@@ -52,7 +52,6 @@
   #home-content{
       width: 80%;
       height: 700px;
-      background-color: blue;
       margin: 50px auto;
       display: grid;
       grid-template-columns: 50% 50%;
@@ -70,7 +69,7 @@
   }
 
   #summaries p{
-      font-size: 30px;
+      font-size: 25px;
   }
   #summaries h1{
     font-size: 50px;
@@ -82,4 +81,26 @@
 
   .summary:hover{
       transform: scale(1.1);
+  }
+  #social{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+  }
+  #social div{
+      margin: auto;
+      transition: transform 0.3s ease;
+  }
+  #social div:hover{
+      cursor: pointer;
+      transform: scale(1.05);
+  }
+
+  #social {
+      line-height: 20px;
+  }
+
+  #social img{
+      width: 20px;
+      height: 20px;
   }
