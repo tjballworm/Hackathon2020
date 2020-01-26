@@ -19,9 +19,9 @@
         <img id="nav-pic"src="https://cdn.discordapp.com/attachments/670795475557023744/670833639994556417/GGblue.png">
     </nav>          
     <main id='main'>
-        
+        <h1 id='page-title'> Create your event </h1>
         <form>
-            <h1 id='page-title'> Create your event </h1>
+            
                 <p>
                     <label>Event Name</label>
                     <input type = "text"
@@ -54,7 +54,7 @@
                 </p>
                 <p>
                     <label>Location </label>
-                    <select id = "locationDropdown">
+                    <select id = "locationDropdown" onchange = "displayLoc">
                         <option value = "1">~</option>
                         <option value = "2">Venue</option>
                         <option value = "3">Online Event</option>
@@ -81,7 +81,6 @@
                            min = "2020-1-25"
                            max = "2021-12-31" />
                 </p>
-                
 
         </form>
         
