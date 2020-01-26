@@ -43,3 +43,43 @@
       height: 70px;
       top: 5px;
   }
+
+
+
+
+
+
+  #home-content{
+      width: 80%;
+      height: 700px;
+      background-color: blue;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: 50% 50%;
+  }
+
+  #content-pic{
+      height: 100%;
+  }
+  #summaries{
+      width: 70%;
+      height: 90%;
+      margin: 50px auto;
+      display: grid;
+      grid-template-rows: 33.3333%, 33.33333%, 33.33333%;
+  }
+
+  #summaries p{
+      font-size: 30px;
+  }
+  #summaries h1{
+    font-size: 50px;
+  }
+
+  .summary{
+      transition:  transform 0.3s ease;
+  }
+
+  .summary:hover{
+      transform: scale(1.1);
+  }
