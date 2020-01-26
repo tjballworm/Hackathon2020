@@ -1,11 +1,29 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
+const Event = require('./Event.js');
 
 
 const app = express();
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 50;
 var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+
+//ogosh001@umn.edu
+//Kobekob33
+
+// Connect to Database
+mongoose.connect('mongodb+srv://zstrombeck:hack123@gamegatherer-a1b3b.gcp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true }, function(err){
+    if(err){
+        console.log("Failed to connect to Database");
+    } else {
+        console.log('Successfully Connected to Database');
+    }
+});
+
+//middleware
+app.use(express.json()); //body parser
 
 // GETS
 app.use(express.static('Public'));
@@ -23,42 +41,33 @@ app.get("/Home", (req, res)=>{
 
 
 
-// // POSTS
-// app.post('/register', async (req, res) =>{
+// POSTS
+app.post('/add',  async (req, res) => {
+    console.log("Adding an Event");
+    //console.log(req.body);
 
-//     //validate data before making a user
-//     const {error} = registerValidation(req.body);
-//     if(error){
-//         return res.status(400).send(error.details[0].message);
-//     } 
 
-//     //Verify email is not already in the system
-//     const emailAlreadyExists = await User.findOne({email: req.body.email});
-
-//     if(emailAlreadyExists){
-//         return res.status(400).send("Email already exists");
-//     }
-
-//     //Hash the password
-//     const salt = await bcrypt.genSalt(10);
-//     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-//     console.log(User.listIndexes);
-//     console.log('Got a post request');
-//     const user = new User({
-//         firstName: req.body.firstName,
-//         lastName: req.body.lastName,
-//         username: req.body.username,
-//         email: req.body.email,
-//         password: hashedPassword,
-//     });
-//     // /console.log(user);
-//     try{
-//         const savedUser = await user.save();
-//         res.send({user: user.id});
-//     } catch(err){
-//         res.status(400).send(err);
-//     }
-// });
+    const event = new Event({
+        eventCreator: req.body.eventCreator,
+        email : req.body.email,
+        dateStart : req.body.dateStart,
+        dateEnd : req.body.dateEnd,
+        locationSpec : {
+            lat : req.body.locationSpec.lat,
+            long : req.body.locationSpec.long,
+            locationName : req.body.locationSpec.locationName
+        }, 
+        phoneNumber : req.body.phoneNumber,
+        typeOfGame : req.body.typeOfGame
+    });
+    console.log(event);
+    try{
+        const savedEvent = await event.save();
+        res.send({event: event.id});
+    } catch(err){
+        res.status(400).send(err);
+    }
+});
 
 
 
@@ -69,3 +78,5 @@ app.get("/Home", (req, res)=>{
 app.listen(port, ip);
 console.log(`Server is Running! on IP:${ip} PORT:${port}`);
 module.expres = app;
+
+console.log(new Date(Date.now()).toString())
