@@ -3,6 +3,12 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
+    eventName:{
+        type:String,
+        required:true,
+        min:1,
+        max:255
+    },
     eventCreator:{
         type: String,
         required: false,
