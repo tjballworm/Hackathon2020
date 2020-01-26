@@ -8,10 +8,19 @@
     <link href="https://fonts.googleapis.com/css?family=Jura&display=swap" rel="stylesheet">
     <title>Game Gathering</title>
 </head>
-<body background="https://cdn.discordapp.com/attachments/670795475557023744/670833639994556417/GGblue.png">            
-    <main>
-        <h1> Create your event </h1>
+<body style="background-color: white;">
+    <nav id='nav-bar'>
+        <div id='nav-bar-links'>
+        <a class = 'nav-bar-link' href=''>Home</a>
+        <a class = 'nav-bar-link' href=''>Create an Event</a>
+        <a class = 'nav-bar-link' href=''>Find an Event</a>
+        </div>
+        <img id="nav-pic"src="https://cdn.discordapp.com/attachments/670795475557023744/670833639994556417/GGblue.png">
+    </nav>          
+    <main id='main'>
+        
         <form>
+            <h1 id='page-title'> Create your event </h1>
                 <p>
                     <label>Event Name</label>
                     <input type = "text"
@@ -19,26 +28,32 @@
                            value = "" />
                 </p>
                 <p>
-                    <label>First Name</label>
+                    <label>Your Name</label>
                     <input type = "text"
-                           id = "firstName"
+                           id = "eventCreator"
                            value = "" />
                 </p>
                 <p>
-                    <label>Last Name</label>
+                    <label>Type of Game</label>
                     <input type = "text"
-                           id = "lastName"
+                           id = "typeOfGame"
                            value = "" />
                 </p>
                 <p>
                     <label>E-Mail </label>
                     <input type = "text"
-                           id = "eMail"
+                           id = "email"
+                           value = "" />
+                </p>
+                <p>
+                    <label>Phone Number </label>
+                    <input type = "text"
+                           id = "phoneNumber"
                            value = "" />
                 </p>
                 <p>
                     <label>Location </label>
-                    <select id = "locationDrop">
+                    <select id = "locationDropdown">
                         <option value = "1">~</option>
                         <option value = "2">Venue</option>
                         <option value = "3">Online Event</option>
@@ -46,9 +61,8 @@
                 </p>
                 <p>
                     <input type = "text"
-                           id = "locationName"
-                           value = "Address"
-                           visible = false />
+                           id = "locationSpec"  
+                           value = "Address" />
                 </p>
                 <p>
                     <label>Start Date</label>
