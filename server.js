@@ -6,7 +6,7 @@ const Event = require('./Event.js');
 
 const app = express();
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 50;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 100;
 var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 
