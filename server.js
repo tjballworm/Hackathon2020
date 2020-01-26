@@ -77,6 +77,7 @@ app.post('/find',  async (req, res) => {
 
     const events = await Event.find({});
     const data = Array.from(events);
+    console.log(req.body)
 
     const regEx = req.body.expr;
     if(!regEx){
