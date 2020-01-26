@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-const Event = require('./Event.js');
+const Event = require('./event.js');
 
 
 const app = express();
