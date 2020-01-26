@@ -29,6 +29,11 @@ body{
 
 /*TODO REPOSITION DROPDOWN*/
 
+#page-title{
+    font-size: 64;
+    display: table;
+    margin: 40px auto;
+}
 
 #nav-bar{
     width: 99%;
