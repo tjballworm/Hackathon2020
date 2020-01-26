@@ -77,16 +77,14 @@ app.post('/find',  async (req, res) => {
 
     const events = await Event.find({});
     const data = Array.from(events);
+    res.send(data);
     console.log(req.body)
 
-    const regEx = req.body.expr;
-    if(!regEx){
-        res.status(400).send("Provide a Expression");
-    }
 
-    const filterEvents = data.filter(e => (e.eventName + e.email + e.locationSpec.locationName + e.eventCreator + e.typeOfGame).match(regEx));
-    res.send(filterEvents)
-    console.log(filterEvents);
+
+    // const filterEvents = data.filter();
+    // res.send(filterEvents)
+    // console.log(filterEvents);
 
 
     console.log(Array.from(events));
