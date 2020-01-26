@@ -3,13 +3,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    firstName:{
-        type: String,
-        required: false,
-        min : 1,
-        max : 255
-    },
-    lastName:{
+    eventCreator:{
         type: String,
         required: false,
         min : 1,
@@ -27,26 +21,46 @@ const userSchema = new mongoose.Schema({
         min: 6,
         max: 255
     },
-    password: {
-        type: String,
-        required: true,
-        max: 1024,
-        min: 6
-    },
-    date: {
+    dateStart: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: true
     },
-    location:{
-        x:{
+    dateEnd: {
+        type:Date,
+        default:Date.now,
+        required:true
+    },
+    locationName: {
+        type:String,
+        min:1,
+        max:255,
+        required:true
+    },
+    locationSpec:{
+        lat:{
             type: Number,
             default: 0
         },
-        y:{
+        long:{
             type: Number,
             default: 0
-        }
+        },
+        required:false
+    },
+    phoneNumber:{
+        type:Number,
+        required: false,
+        min: 10,
+        max: 11
+    },
+    typeOfGame:{
+        type:String,
+        required:true,
+        min:1,
+        max:255
     }
+
 });
 
 //Determines the collection it will be saved in users
