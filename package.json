@@ -1,0 +1,19 @@
+{
+  "name": "hackathon2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjballworm/Hackathon2020.git"
+  },
+  "author": "Kobe Ogoshi, Sarah Vadnais, Worm Ball, Zach Strombeck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjballworm/Hackathon2020/issues"
+  },
+  "homepage": "https://github.com/tjballworm/Hackathon2020#readme"
+}
