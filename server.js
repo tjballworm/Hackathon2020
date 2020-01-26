@@ -78,3 +78,5 @@ app.post('/add',  async (req, res) => {
 app.listen(port, ip);
 console.log(`Server is Running! on IP:${ip} PORT:${port}`);
 module.expres = app;
+
+console.log(new Date(Date.now()).toString())
