@@ -9,6 +9,26 @@ label{
     position: relative;
     left: 40%;
 }
+
+#locationDrop{
+    position: relative;
+    left: 45%;
+}
+
+#locationName{
+    position: relative;
+    left: 50%;
+    visibility: hidden;
+    /*TODO IMPLEMENT THING TO SHOW THE LOCATION BOX !!!!!!!!!!!!*/
+}
+
+/*TODO REPOSITION DROPDOWN*/
+
+h1{
+    position: absolute;
+    top: 5%;
+}
+
 p input{
     position: absolute;
     left: 50%;
