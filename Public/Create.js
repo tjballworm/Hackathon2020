@@ -67,6 +67,10 @@ function infoError(event){
         },
         body: JSON.stringify(packet)})
     .then((response) => response.json()).then(data =>{
-        console.log(data);
+        console.log(data.event);
+        if(data.event){
+            alert('sucessful event created!');
+            location.reload();
+        }
     });
 }
