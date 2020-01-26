@@ -14,11 +14,10 @@ function displayChange(){
 }
 
 /*Information Validation*/
-document.getElementById("submitBtn").onclick = function() {infoError()};
+document.getElementById("submitBtn").addEventListener('click', infoError);
+function infoError(event){
 
-
-function infoError(){
-
+    console.log(event);
     /*Variables to make it simpler*/
     var eventName = document.getElementById("eventName").value;
     var eventCreator = document.getElementById("eventCreator").value;
@@ -37,18 +36,37 @@ function infoError(){
     for (i = 0; i < var_names.length; i++) {
         if (var_names[i]){
         }else{
-            alert("You left some field empty!")
+            alert("You left some field empty!");
+            break;
         }
     }
-
     if (isNaN(phoneNumber)) {
         alert("Your phone number is invalid!")
     }
 
 
-    
+    var packet = {
+        eventName : eventName, 
+        eventCreator: eventCreator,
+        email: email,
+        dateStart: startDate,
+        dateEnd: endDate,
+        locationSpec: {
+            lat : lat,
+            long: long,
+            locationName: location
+        },
+        phoneNumber: phoneNumber,
+        typeOfGame: typeOfGame
+    };
 
-
-
-
+    fetch('./add', {
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(packet)})
+    .then((response) => response.json()).then(data =>{
+        console.log(data);
+    });
 }

@@ -7,9 +7,25 @@
     <link rel="stylesheet" href="./Create.css">
     <link href="https://fonts.googleapis.com/css?family=Jura&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/670795475557023744/670833639994556417/GGblue.png" type="image/x-icon">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsfkkObaeu-5ICV1M5RKnF5uDuCeF_tfU&libraries=places"></script>
+    <script>
+        google.maps.event.addDomListener(window, 'load', initialize);
+        var place;
+        var long; 
+        var lat; 
+        function initialize() {
+            var input = document.getElementById('locationSpec');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.addListener('place_changed', function () {
+                var place = autocomplete.getPlace();
+                 long = place.geometry.location.lng();
+                 lat = place.geometry.location.lat();
+            });
+        }
+    </script>
     <title>Game Gathering</title>
 </head>
-<body style="background-color: white;">
+<body style="background-color: white;" onload="initialize()">
     <nav id='nav-bar'>
         <div id='nav-bar-links'>
         <a class = 'nav-bar-link' href='./Home.html'>Home</a>
@@ -81,7 +97,7 @@
                            min = "2020-1-25"
                            max = "2021-12-31" />
                 </p>
-                <button type="button" id ="submitBtn" onclick="alert('Thanks for adding an event!')">Submit</button>
+                <button type="button" id ="submitBtn">Submit</button>
 
         </form>
         
