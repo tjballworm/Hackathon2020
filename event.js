@@ -9,12 +9,6 @@ const userSchema = new mongoose.Schema({
         min : 1,
         max : 255
     },
-    username:{
-        type: String,
-        required: true,
-        min : 1,
-        max : 255
-    },
     email:{
         type: String,
         required: true,
@@ -31,12 +25,6 @@ const userSchema = new mongoose.Schema({
         default:Date.now,
         required:true
     },
-    locationName: {
-        type:String,
-        min:1,
-        max:255,
-        required:true
-    },
     locationSpec:{
         lat:{
             type: Number,
@@ -46,13 +34,16 @@ const userSchema = new mongoose.Schema({
             type: Number,
             default: 0
         },
-        required:false
+        locationName: {
+            type:String,
+            min:1,
+            max:255,
+            required:true
+        }
     },
     phoneNumber:{
-        type:Number,
+        type: Number,
         required: false,
-        min: 10,
-        max: 11
     },
     typeOfGame:{
         type:String,
@@ -60,8 +51,7 @@ const userSchema = new mongoose.Schema({
         min:1,
         max:255
     }
-
 });
 
 //Determines the collection it will be saved in users
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Event', userSchema);
